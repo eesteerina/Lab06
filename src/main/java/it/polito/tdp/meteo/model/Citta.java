@@ -47,6 +47,18 @@ public class Citta {
 	public void increaseCounter() {
 		this.counter += 1;
 	}
+	
+	public double getMediaUmiditaLocalita() {
+		
+		double tot = 0.0;
+		
+		for(Rilevamento r : rilevamenti) {
+			tot += r.getUmidita();
+		}
+		
+		double ritorno = tot / rilevamenti.size();
+		return ritorno;
+	}
 
 	@Override
 	public int hashCode() {
